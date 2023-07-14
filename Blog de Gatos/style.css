@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+  
+    --bg-color-primary: hsl(195, 91%, 25%);
+    --bg-color-secundary: hsl(0, 0%, 100%);
+    --fc-header: hsl(0, 0%, 100%);
+    --fc-primary: hsl(240, 6%, 13%);
+    --fc-secundary: hsl(240, 6%, 7%);
+  }
+  
+  body {
+    font-size: 1.6rem;
+    color: var(--fc-primary);
+    font-weight: 400;
+  }
+  
+  h1, h2, h3 {
+    color: var(--fc-secundary);
+  }
+  
+  #app {
+    display: grid;
+    height: 100vh;
+  }
+  
+  .content, aside {
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .content p {
+    padding-top: 2rem;
+  }
+  
+  .content h2 {
+    font-size: 2.4rem;
+  }
+  
+  .title h1 {
+    padding-bottom: .8rem;
+  }
+  
+  .buttons img {
+    background: var(--bg-color-primary);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    box-sizing: content-box;
+    padding: 1.2rem;
+    transition: all 500ms ease-in-out;
+  }
+  
+  .buttons img:hover {
+    transform: scale(1.5) rotate(-2deg);
+  }
+  
+  header {
+    background: var(--bg-color-primary);
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    gap: 3rem;
+  }
+  
+  header form {
+    flex: 1;
+  }
+  
+  header img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  main {
+    background: var(--bg-color-secundary);
+  }
+  
+  main img {
+    width: 100%;
+    object-fit: cover;
+    transition: all 500ms ease-in-out;
+  }
+  
+  
+  
+  main h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  
+  aside h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  
+  aside h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  aside p {
+    font-size: 1.4rem;
+  }
+  
+  .input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  .input-wrapper input {
+    width: 100%;
+    padding: 1.6rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.20);
+ 
+    border: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .input-wrapper:hover{
+ background-color: var(--bg-color-primary);
+opacity: 0.56;
+    transition: 0,5s;
+    opacity: 0,7;
+
+  }
+  .input-wrapper input::placeholder {
+    color: var(--fc-header);
+  }
+  
+  .articles {
+    margin-top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.4rem;
+    padding-bottom: 3.9rem;
+  }
+  
+  .item {
+    display: flex;
+    gap: 1.6rem;
+    justify-items: center;
+    align-items: center;
+  }
+  
+
+  
+  
+  .item p {
+    max-width: 25rem;
+  }
+  
+  .item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+  }
+  
+  footer {
+    background: var(--bg-color-primary);
+    padding: 1.6rem;
+    text-align: center;
+    color: var(--fc-header);
+  }
+  
+  @media (min-width: 900px) {
+    #app {
+      grid-template-areas: 
+      "HEADER HEADER HEADER"
+      "MAIN MAIN ASIDE"
+      "FOOTER FOOTER FOOTER"
+      ;
+      gap: 4rem 3rem;
+    }
+  
+    .content{
+      max-width: 100%;
+      padding: 3.2rem 0 0 0;
+    }
+  
+    header {
+      grid-area: HEADER;
+      padding: 1.5rem 12rem;
+   }
+  
+    main {
+      grid-area: MAIN;
+      padding-left: 10rem;
+    }
+  
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .buttons {
+      display: flex;
+      gap: 1.2rem;
+    }
+  
+    aside {
+      grid-area: ASIDE;
+      padding: 0rem 12rem 0rem 3.4rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    footer {
+      grid-area: FOOTER;
+    }
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  }
